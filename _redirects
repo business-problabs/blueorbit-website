@@ -1,6 +1,7 @@
-# Canonical redirect: force the apex domain to www
-https://blueorbit.info/* https://www.blueorbit.info/:splat 301!
+# Cloudflare Pages only accepts relative URLs as redirect sources.
+# The apex -> www canonical redirect is handled at the DNS/registrar level
+# (or via a Cloudflare Redirect Rule if the zone is moved to Cloudflare).
 
-# Clean URL fallback (optional convenience routes)
+# Clean URL convenience routes
 /home  /index.html  200
 /about /about.html  200
