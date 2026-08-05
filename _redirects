@@ -1,0 +1,6 @@
+# Canonical redirect: force the apex domain to www
+https://blueorbit.info/* https://www.blueorbit.info/:splat 301!
+
+# Clean URL fallback (optional convenience routes)
+/home  /index.html  200
+/about /about.html  200
