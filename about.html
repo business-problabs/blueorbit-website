@@ -137,7 +137,15 @@
           </div>
         </div>
 
-        <form class="contact-form" id="contactForm" action="mailto:business@blueorbit.info" method="post" enctype="text/plain">
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/business@blueorbit.info" method="POST">
+          <!-- FormSubmit configuration -->
+          <input type="hidden" name="_subject" value="New inquiry from blueorbit.info">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://blueorbit.info/thanks.html">
+          <!-- Honeypot: bots fill this in, humans never see it -->
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
           <div class="form-row">
             <div class="field">
               <label for="name">Full Name</label>
@@ -157,7 +165,7 @@
             <textarea id="message" name="message" placeholder="Tell us about your project or question..." required></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Send Message</button>
-          <p class="form-note">Submitting this form opens your default email client addressed to business@blueorbit.info.</p>
+          <p class="form-note">Your message is sent directly to business@blueorbit.info. We typically respond within one business day.</p>
         </form>
       </div>
     </div>

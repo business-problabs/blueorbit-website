@@ -1,7 +1,11 @@
-# Cloudflare Pages only accepts relative URLs as redirect sources.
-# The apex -> www canonical redirect is handled at the DNS/registrar level
-# (or via a Cloudflare Redirect Rule if the zone is moved to Cloudflare).
-
-# Clean URL convenience routes
-/home  /index.html  200
-/about /about.html  200
+# Cloudflare Pages handles clean URLs automatically:
+#   /about.html  ->  /about
+#   /index.html  ->  /
+# Do NOT add rules mapping /about back to /about.html — that creates an
+# infinite redirect loop and takes the page offline.
+#
+# The apex -> www canonical behaviour is handled at the DNS / Cloudflare
+# level, not here. Cloudflare Pages only accepts relative URLs as redirect
+# sources, so absolute-URL rules are rejected at build time.
+#
+# This file is intentionally empty of rules.
