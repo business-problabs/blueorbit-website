@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Blue Orbit">
+  <defs>
+    <clipPath id="planet">
+      <circle cx="30" cy="30" r="17.5"/>
+    </clipPath>
+    <clipPath id="ringFront">
+      <rect x="0" y="32" width="64" height="32"/>
+    </clipPath>
+  </defs>
+
+  <!-- Ring: back half (drawn first, planet covers the middle) -->
+  <g transform="rotate(-22 32 32)">
+    <ellipse cx="32" cy="32" rx="29" ry="9.5" fill="none" stroke="#1668c8" stroke-width="4.5"/>
+  </g>
+
+  <!-- Planet body with shading -->
+  <g clip-path="url(#planet)">
+    <circle cx="30" cy="30" r="17.5" fill="#1a73d1"/>
+    <circle cx="41" cy="39" r="17.5" fill="#0d5199" opacity="0.5"/>
+  </g>
+
+  <!-- Specular highlight, upper left -->
+  <path d="M19.5 25.5c2.2-4.2 6.4-7 11.2-7.4-4.9 2-8.6 6.2-9.9 11.4z"
+        fill="#ffffff" opacity="0.9"/>
+
+  <!-- Ring: front half, passes over the planet -->
+  <g transform="rotate(-22 32 32)" clip-path="url(#ringFront)">
+    <ellipse cx="32" cy="32" rx="29" ry="9.5" fill="none" stroke="#1668c8" stroke-width="4.5"/>
+  </g>
+</svg>
